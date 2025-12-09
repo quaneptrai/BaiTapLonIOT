@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hệ thống IoT Nông nghiệp (TDS & Motor)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Hệ thống giám sát bể cá</h1>
+
+    <div id="controls">
+      <h2>Điều khiển Motor</h2>
+      <p>Trạng thái Firebase: <span id="motor-status">Đang tải...</span></p>
+      <button id="btn-on">BẬT MOTOR</button>
+      <button id="btn-off">TẮT MOTOR</button>
+    </div>
+
+    <hr />
+
+    <div id="data-live">
+      <h2>Dữ liệu Mới nhất</h2>
+      <p>Nhiệt độ: <span id="display-temp">--</span> °C</p>
+      <p>TDS: <span id="display-tds">--</span> ppm</p>
+      <p class="timestamp">Cập nhật lúc: <span id="last-update">--</span></p>
+    </div>
+
+    <hr />
+
+    <div id="chart-container" style="width: 80%; margin: 20px auto">
+      <h2>Biểu đồ TDS & Nhiệt độ (Lịch sử)</h2>
+      <canvas id="sensorChart"></canvas>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
